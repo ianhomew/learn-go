@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 
 	var i int = 10
-	fmt.Println("i 的記憶體地址是 ", &i)
+	fmt.Println("i 的記憶體位址是 ", &i)
 
 	// ptr 是一個指針變數
 	// ptr 的變數類型是 *int
