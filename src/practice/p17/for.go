@@ -35,7 +35,7 @@ func main() {
 	// 上面的解法
 	var s2 = []rune(s)
 	for i := 0; i < len(s2); i++ {
-		fmt.Printf("=== %c", s2[i]) // 中文佔 3 bytes 英文字母佔 1 byte 會出現亂碼
+		fmt.Printf("=== %c", s2[i]) // 這樣不會出現亂碼
 	}
 
 	// 5. for range
