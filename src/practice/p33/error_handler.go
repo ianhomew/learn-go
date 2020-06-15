@@ -9,11 +9,13 @@ import "fmt"
 func divideZero() {
 	// 使用 defer + recover 處理異常
 	defer func() {
-		//err := recover() // 內建函數 可以捕獲到異常
+		// go 的 if 可以在裡面宣告變數 這個變數的作用域只在 if 內部
+		//err := recover() // // 內建函數 可以捕獲到異常
+		//if err != nil
 
 		// 初始化 err         判斷是否 nil
 		if err := recover(); err != nil { // 表示有錯誤
-			// 可以做處理 例如發送mail給管理員等等
+			// 可以做處理 例如發送 mail 給管理員等等
 			fmt.Println("err = ", err)
 		}
 

@@ -13,9 +13,9 @@ func main() {
 
 	// 13. replace n: 替換次數 -1表示全部
 	var s2 = "go golang"
-	fmt.Println(strings.Replace(s2, "go", "語言", 1))
-	fmt.Println(strings.Replace(s2, "go", "語言", 2))
-	fmt.Println(strings.Replace(s2, "go", "語言", -1))
+	fmt.Println(strings.Replace(s2, "go", "語言", 1))  // 語言 golang
+	fmt.Println(strings.Replace(s2, "go", "語言", 2))  // 語言 語言lang
+	fmt.Println(strings.Replace(s2, "go", "語言", -1)) // 語言 語言lang
 
 	// 14. 將字串拆分成陣列, in php is explode
 	var s3 = "hello,b,c,d,e,f,中文"

@@ -30,6 +30,7 @@ func main() {
 	fmt.Println("格式化後 ", dateString)
 
 	fmt.Println("另一種格式化方式")
+	// 發明語言 就是可以任性
 	// 2006-01-02 15:04:05 這個字串是固定的 必須這樣寫.................WTF
 	fmt.Println(now.Format("2006-01-02 15:04:05"))
 	fmt.Println(now.Format("2006/01/02"))

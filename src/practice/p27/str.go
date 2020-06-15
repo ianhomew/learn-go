@@ -58,10 +58,10 @@ func main() {
 		fmt.Println(superMan, "has super")
 	}
 
-	// 9. 統計一個字串充含有幾個指定的子字串
+	// 9. 統計一個字串中含有幾個指定的子字串
 	var cheese = "cheese"
-	fmt.Println(cheese, "has", strings.Count(cheese, "e"), "e")
-	fmt.Println(cheese, "has", strings.Count(cheese, "ee"), "ee")
+	fmt.Println(cheese, "has", strings.Count(cheese, "e"), "e")   // 3
+	fmt.Println(cheese, "has", strings.Count(cheese, "ee"), "ee") // 1
 
 	// 10. 不區分大小寫的字串比較, 區分大小寫 直接使用 ==
 	if strings.EqualFold("apple", "APPLE") {
@@ -71,8 +71,8 @@ func main() {
 
 	// 10. get the index of substring in the string, if none then -1
 	var s4 = "ABCDEFG"
-	fmt.Println(s4, ", the index of B is", strings.Index(s4, "B"))
-	fmt.Println(s4, ", the index of B is", strings.Index(s4, "Z"))
+	fmt.Println(s4, ", the index of B is", strings.Index(s4, "B")) // 1
+	fmt.Println(s4, ", the index of B is", strings.Index(s4, "Z")) // -1
 	//strings.LastIndex()
 
 }
