@@ -6,7 +6,7 @@ func sum(a int, b int) int {
 	return a + b
 }
 
-// 定義一個型別為 func 且 帶有兩個參數 且 需要回傳 int
+// 定義一個型別為 `func(int, int) int`
 type myCustomFun func(int, int) int
 
 func sum2(hana myCustomFun, n1 int, n2 int) int {

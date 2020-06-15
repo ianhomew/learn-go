@@ -21,6 +21,7 @@ func main() {
 	if &f == &f1 {
 		fmt.Println("f == f1")
 	} else {
+		// 流程會跑到這邊 因為系統分配給 f & f1 的 sum 記憶體位址是不一樣的
 		fmt.Println("f != f1")
 	}
 
