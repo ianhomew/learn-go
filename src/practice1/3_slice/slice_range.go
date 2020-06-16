@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// 如何對切片 slice 做 loop
+
 func main() {
 
 	var arr [6]int = [6]int{10, 20, 20, 30, 40, 50}
@@ -10,13 +12,13 @@ func main() {
 
 	fmt.Println("===========================")
 
-	// use for
+	// 1. use for
 	for i := 0; i < len(slice); i++ {
 		fmt.Printf("slice[%v] = %v\n", i, slice[i])
 	}
 	fmt.Println("===========================")
 
-	// use for range
+	// 2. use for range
 	for index, value := range slice {
 		fmt.Printf("slice[%v] = %v\n", index, value)
 	}

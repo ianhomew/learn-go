@@ -7,14 +7,14 @@ import "fmt"
 func main() {
 
 	// 1. 定義一個切片 讓切片去引用一個已經存在的陣列
-	var arr = [...]int{1, 2, 3}
-	var way1 []int = arr[:]
+	var arr = [...]int{1, 2, 3} // arr 是陣列
+	var way1 []int = arr[:]     // way1 是結構體
 	fmt.Println("第一種方式", way1)
 
 	fmt.Println("=======================")
 	// 2. 使用 make
 	// 切片必須 make 後才能使用
-	var slice []float64 // 只宣告變數為一個 float64的切片 這時候還不能使用
+	var slice []float64 // 只宣告變數為一個 float64 的切片 這時候還不能使用
 	//slice[0] = 100 // 會錯 因為 slice == nil
 	fmt.Printf("只有宣告變數 還沒分配記憶體位址 silce == nill ?  ans: %t\n", slice == nil)
 	fmt.Println("slice = ", slice, "len = ", len(slice), "cap = ", cap(slice))

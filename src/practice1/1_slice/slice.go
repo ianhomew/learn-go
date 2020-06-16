@@ -11,8 +11,8 @@ func main() {
 	var intArr [5]int = [...]int{1, 22, 33, 44, 55}
 
 	// 定義 slice
-	// 1 表示從索引為 1 開始到 索引為 3 的結束且不包含 3
-	// intArr[1:3] 解釋為 slice 引用到 intArr 陣列裡面的 intArr[1], intArr[2]
+	// 1 表示從索引為 1 開始到 索引為 3 的結束但不包含 3
+	// slice := intArr[1:3] 解釋: slice 引用到 intArr 陣列裡面的 intArr[1], intArr[2]
 	slice := intArr[1:3]
 	fmt.Println("intArr = ", intArr, "len = ", len(intArr))
 	fmt.Println("slice = ", slice, "len = ", len(slice)) // 22, 33
