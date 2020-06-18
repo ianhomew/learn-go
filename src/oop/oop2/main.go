@@ -4,7 +4,7 @@ import "fmt"
 
 // 結構體是值類型
 // slice, map, pointer 默認值是 nil 表示尚未分配記憶體空間
-// 若要使用 需要 make
+// 若要使用 slice or map1 需要 make
 type Person struct {
 	Name   string
 	Age    int

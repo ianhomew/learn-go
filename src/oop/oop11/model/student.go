@@ -6,7 +6,7 @@ type student struct {
 	score1 float64 // how to get this value in other .go file?
 }
 
-// 注意是 *student
+// 注意是 *student 無法回傳 student 因為 s 是小寫
 // 放在堆裡面可以共享？
 func NewStudent(name string, score float64) *student {
 	// &student: 結構體本身是值類型 且該結構體為私有 外部無法取得
@@ -14,7 +14,7 @@ func NewStudent(name string, score float64) *student {
 
 	s := student{name, score, score}
 	return &s
-	// 上下一樣 寫成上面我暫時比較好理解................
+	// 上下一樣
 
 	//return &student{
 	//	name,

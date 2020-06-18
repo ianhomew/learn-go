@@ -28,6 +28,7 @@ func (p Person) cal2(n int) {
 }
 
 // 這邊參數是 值拷貝 也可以用指針
+// 值拷貝的問題在於 我們把相同的東西複製一份 佔用了記憶體空間
 func (p Person) getSum(a, b int) int {
 	return a + b
 }

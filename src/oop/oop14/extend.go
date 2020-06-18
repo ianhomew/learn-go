@@ -11,7 +11,7 @@ type Goods struct {
 }
 
 type Book struct {
-	Goods  // 匿名結構體在此
+	Goods  // 匿名結構體在此 匿名結構體在此 匿名結構體在此 匿名結構體在此 匿名結構體在此
 	Writer string
 }
 
