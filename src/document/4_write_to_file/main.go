@@ -25,7 +25,7 @@ func main() {
 		_, _ = writer.WriteString(str + "\r\n")
 	}
 
-	// 因為 writer 是帶緩存的 因此在調用 WriteString 方法時 事先寫入緩存的
+	// 因為 writer 是帶緩存的 因此在調用 WriteString 方法時 是先寫入緩存的
 	// 看結構體
 	//type Writer struct {
 	//	err error

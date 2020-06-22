@@ -10,15 +10,18 @@ import (
 func main() {
 	// 帶緩衝區的方式
 	// 更加適合讀取大文件
-	// os.Open, fuke.Close,
+	// os.Open, file.Close,
+
+	// 開欓是 os.Open
+	// 讀/寫 是 bufio.NewReader / bufio.NewWriter
 
 	var filePath string = "src/document/has_buffer/data.txt"
 	var file, err = os.Open(filePath)
 
 	// file 的叫法
-	// 1. file 對象
-	// 2. file 指針
-	// 3. file 文件句柄
+	// 1. file 稱作對象
+	// 2. file 稱作指針
+	// 3. file 稱作文件句柄
 
 	if err != nil {
 		fmt.Println(err)
