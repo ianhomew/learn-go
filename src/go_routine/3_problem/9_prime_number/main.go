@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"runtime"
 )
 
 // 統計 1 - 8000 有哪些質數
@@ -10,7 +10,7 @@ import (
 
 // 1 不是質數
 func pushNumber(intChan chan int) {
-	for i := 2; i <= 80; i++ {
+	for i := 2; i <= Numbers; i++ {
 		intChan <- i
 	}
 	//fmt.Println("push [", i, "] to chan")
@@ -46,22 +46,27 @@ func calPrimeNumber(intChan chan int, primeChan chan int, exitChan chan bool) {
 
 }
 
+const RoutineNum = 4
+const Numbers = 8000
+
 func main() {
+
+	runtime.GOMAXPROCS(2)
 
 	var intChan = make(chan int, 8000)
 	var primeChan = make(chan int, 4000)
 	var exitChan = make(chan bool, 4)
 
 	go pushNumber(intChan)
-	time.Sleep(time.Second * 1)
-	go calPrimeNumber(intChan, primeChan, exitChan)
-	go calPrimeNumber(intChan, primeChan, exitChan)
-	go calPrimeNumber(intChan, primeChan, exitChan)
-	go calPrimeNumber(intChan, primeChan, exitChan)
+	//time.Sleep(time.Second * 1)
+
+	for i := 0; i < RoutineNum; i++ {
+		go calPrimeNumber(intChan, primeChan, exitChan)
+	}
 
 	go func() {
 		// 這樣比較厲害
-		for i := 0; i < 4; i++ {
+		for i := 0; i < RoutineNum; i++ {
 			// 這邊取不到 會等待
 			<-exitChan
 		}
@@ -77,13 +82,14 @@ func main() {
 	//		count++
 	//	}
 	//
-	//	if count == 4 {
+	//	if count == ROUTINE_NUM {
 	//		close(primeChan)
 	//		close(resChan)
 	//		break
 	//	}
 	//}
 
+	// 盡量不要用 range
 	//for primeNumber := range primeChan {
 	//	fmt.Println("primeNumber = ", primeNumber)
 	//}

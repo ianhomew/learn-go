@@ -11,12 +11,15 @@ func main() {
 	var emptyInterface interface{}
 	var point Point = Point{1, 2}
 
-	emptyInterface = point                                                               // ok
-	fmt.Printf("emptyInterface type = %T, value = %v\n", emptyInterface, emptyInterface) // emptyInterface type = main.Point, value = {1 2}
+	emptyInterface = point // ok
+	// emptyInterface type = raced.Point, value = {1 2}
+	// 這邊還沒轉型 不能使用
+	fmt.Printf("emptyInterface type = %T, value = %v\n", emptyInterface, emptyInterface)
 
 	var b Point
 
 	// b = emptyInterface // error
+	// 這邊已經轉型 可以使用
 	b = emptyInterface.(Point) // 類型斷言
 	fmt.Printf("b type = %T, value = %v\n", b, b)
 
