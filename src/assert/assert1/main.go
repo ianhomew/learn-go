@@ -24,7 +24,7 @@ func main() {
 	emptyInterface = f
 	var ff float32
 	// 斷言一定要相同的資料類型
-	ff = emptyInterface.(float32) // 類型斷言
+	ff = emptyInterface.(float32) // 類型斷言 感覺斷言就是強制轉型？
 	//ff = emptyInterface.(float64) // 這樣會失敗
 
 	fmt.Printf("ff type = %T, value = %v\n", ff, ff)
@@ -34,8 +34,16 @@ func main() {
 	emptyInterface = i
 	fmt.Println("emptyInterface = ", emptyInterface)
 
+	// 標準
 	j, ok := emptyInterface.(int)
 	if ok {
+		fmt.Println("j=", j)
+	} else {
+		fmt.Println("ok = ", ok)
+	}
+
+	// 簡潔 if (宣告); 判斷式
+	if j, ok := emptyInterface.(int); ok {
 		fmt.Println("j=", j)
 	} else {
 		fmt.Println("ok = ", ok)
