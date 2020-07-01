@@ -48,6 +48,7 @@ func main() {
 	fmt.Printf("channel len = %v, cap = %v\n", len(intChan), cap(intChan))
 
 	// 在沒有使用協程的情況下 如果管道資料已經全部取出了 就會出錯
+	// 因為主線程會無限等待直到有數據寫入管道 但是根本不可能有數據寫入管道了 所以會出錯
 	// fatal error: all goroutines are asleep - deadlock!
 	//fmt.Println(<- intChan)
 	//fmt.Println(<- intChan)

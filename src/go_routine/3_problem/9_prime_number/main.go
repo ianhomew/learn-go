@@ -54,8 +54,8 @@ func main() {
 	runtime.GOMAXPROCS(2)
 
 	var intChan = make(chan int, 8000)
-	var primeChan = make(chan int, 4000)
-	var exitChan = make(chan bool, 4)
+	var primeChan = make(chan int, 100) // 其實這邊 size 給大給小都可以 因為有一隻協程在讀取 只會差在效能 因為可能堵塞
+	var exitChan = make(chan bool, RoutineNum)
 
 	go pushNumber(intChan)
 	//time.Sleep(time.Second * 1)

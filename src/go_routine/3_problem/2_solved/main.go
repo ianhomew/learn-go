@@ -24,7 +24,7 @@ func test(n int) {
 	}
 
 	lock.Lock()
-	myMap[n] = res // concurrent map writes here
+	myMap[n] = res // concurrent map writes here was gone.
 	lock.Unlock()
 }
 
@@ -40,7 +40,7 @@ func main() {
 	// 非常大的問題是 我根本不知道這邊要設定幾秒
 	// 好的硬體比較少秒 壞的硬體會等比較多秒
 	// 準確等多少秒無法得知
-	// 等待的目的是要等 go test()做完計算 否則就程式就直接往下跑了
+	// 等待的目的是要等 go test()做完計算 否則程式就直接往下跑了
 	time.Sleep(5 * time.Second)
 
 	lock.Lock()

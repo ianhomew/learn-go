@@ -21,6 +21,12 @@ func main() {
 	//
 	//}
 
+	// 這樣不會報錯
+	//var len1 = len(intChan2)
+	//for i := 0; i < len1; i++ {
+	//	fmt.Println(<-intChan2)
+	//}
+
 	// loop 前 要關閉 否則報錯
 	// fatal error: all goroutines are asleep - deadlock!
 	close(intChan2)

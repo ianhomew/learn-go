@@ -7,7 +7,7 @@ import (
 // 如果只是向管道寫入數據 「沒有讀取」
 // 就會出現阻塞而 dead lock
 // 原因是 intChan 容量是 10 而 writeData 會寫入 50個數據
-// 寫跟讀管道的速度不同 不會怎樣
+// 寫跟讀管道的速度不同 不會出現 dead lock 錯誤
 
 func writeData(intChan chan int) {
 	for i := 1; i <= 50; i++ {
