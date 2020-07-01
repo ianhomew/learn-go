@@ -38,3 +38,19 @@ go 跟 swoole 有點像在協程的部分
 不同 go routine 之間如何通訊
 1. 全局互斥鎖
 2. channel
+
+
+
+
+channel 使用細節與注意事項
+1. channel 可以宣告成只讀或只寫
+2. 使用 select 可以解決從管道讀取數據的阻塞問題
+3. go routine 中使用 recover 解決協程中出現 panic 導致程式崩潰的問題
+
+
+
+
+
+
+
+
